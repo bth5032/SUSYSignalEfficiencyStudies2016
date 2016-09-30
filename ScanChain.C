@@ -883,11 +883,11 @@ int ScanChain( TChain* chain, TString sampleName, ConfigParser *configuration, b
   const int n_metbins_wide_std = 6;
   const double metbins_wide_std[n_metbins_wide_std+1] = {0, 50, 100, 150, 225, 300, 500};
 
-  TH1D *t1met_widebin_lowVert = new TH1D(sampleName+"_type1MET_widebin", "Type 1 MET for "+sampleName+" with less than 20 pileup verticies", n_metbins_wide_std, metbins_wide_std);
+  TH1D *t1met_widebin_lowVert = new TH1D(sampleName+"_type1MET_widebin_lowPU", "Type 1 MET for "+sampleName+" with less than 20 pileup verticies", n_metbins_wide_std, metbins_wide_std);
   t1met_widebin_lowVert->SetDirectory(rootdir);
   t1met_widebin_lowVert->Sumw2();
 
-  TH1D *t1met_widebin_highVert = new TH1D(sampleName+"_type1MET_widebin", "Type 1 MET for "+sampleName+" with 20 or more pileup verticies", n_metbins_wide_std, metbins_wide_std);
+  TH1D *t1met_widebin_highVert = new TH1D(sampleName+"_type1MET_widebin_highPU", "Type 1 MET for "+sampleName+" with 20 or more pileup verticies", n_metbins_wide_std, metbins_wide_std);
   t1met_widebin_highVert->SetDirectory(rootdir);
   t1met_widebin_highVert->Sumw2();
 

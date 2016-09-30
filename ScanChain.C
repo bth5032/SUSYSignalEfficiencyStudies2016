@@ -865,8 +865,8 @@ int ScanChain( TChain* chain, TString sampleName, ConfigParser *configuration, b
 
   clear_list(); //Event duplicate removal clear list
 
-  cout<<"Opening file "<<savePath+"ct_"+conf->get("Name")+"_LSP"+conf->get("mLSP")+"_glu"+conf->get("mGluino")+"_"+conf->get("signal_region")+".root"<<endl;
-  TFile * output = new TFile(savePath+"ct_"+conf->get("Name")+"_LSP"+conf->get("mLSP")+"_glu"+conf->get("mGluino")+"_"+conf->get("signal_region")+".root", "recreate");
+  cout<<"Opening file "<<savePath+conf->get("Name")+conf->get("signal_region")+".root"<<endl;
+  TFile * output = new TFile(savePath+conf->get("Name")+conf->get("signal_region")+".root", "recreate");
 
   numEvents = new TH1I(sampleName+"_numEvents", "Number of events in "+sampleName, 60, 0, 60);
   numEvents->SetDirectory(rootdir);

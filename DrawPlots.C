@@ -36,13 +36,13 @@ void DrawPlots(TString sample){
 
 cout<<__LINE__<<endl;
 
-	TH1D * lowVert_light = (TH1D*) ((TH1D*) files[0]->Get("SUSYLight_type1MET_widebin_lowVert"))->Clone("lowVert_light");
-	TH1D * highVert_light = (TH1D*) ((TH1D*) files[0]->Get("SUSYLight_type1MET_widebin_highVert"))->Clone("highVert_light");
+	TH1D * lowVert_light = (TH1D*) ((TH1D*) files[0]->Get("SUSYLight_type1MET_widebin_lowPU"))->Clone("lowVert_light");
+	TH1D * highVert_light = (TH1D*) ((TH1D*) files[0]->Get("SUSYLight_type1MET_widebin_highPU"))->Clone("highVert_light");
 
 cout<<__LINE__<<endl;
 
-	TH1D * lowVert_heavy = (TH1D*) ((TH1D*) files[1]->Get("SUSYHeavy_type1MET_widebin_lowVert"))->Clone("lowVert_heavy");
-	TH1D * highVert_heavy = (TH1D*) ((TH1D*) files[1]->Get("SUSYHeavy_type1MET_widebin_highVert"))->Clone("highVert_heavy");
+	TH1D * lowVert_heavy = (TH1D*) ((TH1D*) files[1]->Get("SUSYHeavy_type1MET_widebin_lowPU"))->Clone("lowVert_heavy");
+	TH1D * highVert_heavy = (TH1D*) ((TH1D*) files[1]->Get("SUSYHeavy_type1MET_widebin_highPU"))->Clone("highVert_heavy");
 
 cout<<__LINE__<<endl;
 

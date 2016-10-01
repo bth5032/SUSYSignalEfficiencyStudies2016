@@ -116,8 +116,8 @@ void DrawPlots(TString sample){
 	c2->SaveAs("plots/"+sample+"_MET_heavy.png");
 
 
-cout<<"SUSY Light low vertex count MET in bin 300+"<<lowVert_light->GetBinContent(lowVert_light->FindBin(300))<<endl;
-cout<<"SUSY Light high vertex count MET in bin 300+"<<highVert_light->GetBinContent(highVert_light->FindBin(300))<<endl;
-cout<<"SUSY Heavy low vertex count MET in bin 300+"<<lowVert_heavy->GetBinContent(lowVert_heavy->FindBin(300))<<endl;
-cout<<"SUSY Heavy high vertex count MET in bin 300+"<<highVert_heavy->GetBinContent(highVert_heavy->FindBin(300))<<endl;
+cout<<"SR "+sample+": SUSY Light low vertex count 300+ MET count "<<lowVert_light->GetBinContent(lowVert_light->FindBin(300))<<endl;
+cout<<"SR "+sample+": SUSY Light high vertex count 300+ MET count "<<highVert_light->GetBinContent(highVert_light->FindBin(300))<<endl;
+cout<<"SR "+sample+": SUSY Heavy low vertex count 300+ MET count "<<lowVert_heavy->GetBinContent(lowVert_heavy->FindBin(300))<<endl;
+cout<<"SR "+sample+": SUSY Heavy high vertex count 300+ MET count "<<highVert_heavy->GetBinContent(highVert_heavy->FindBin(300))<<endl;
 }

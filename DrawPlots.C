@@ -34,24 +34,24 @@ void DrawPlots(TString sample){
 		exit(1);
 	}
 
-cout<<__LINE__<<endl;
+//cout<<__LINE__<<endl;
 
 	TH1D * lowVert_light = (TH1D*) ((TH1D*) files[0]->Get("SUSYLight_type1MET_widebin_lowPU"))->Clone("lowVert_light");
 	TH1D * highVert_light = (TH1D*) ((TH1D*) files[0]->Get("SUSYLight_type1MET_widebin_highPU"))->Clone("highVert_light");
 
-cout<<__LINE__<<endl;
+//cout<<__LINE__<<endl;
 
 	TH1D * lowVert_heavy = (TH1D*) ((TH1D*) files[1]->Get("SUSYHeavy_type1MET_widebin_lowPU"))->Clone("lowVert_heavy");
 	TH1D * highVert_heavy = (TH1D*) ((TH1D*) files[1]->Get("SUSYHeavy_type1MET_widebin_highPU"))->Clone("highVert_heavy");
 
-cout<<__LINE__<<endl;
+//cout<<__LINE__<<endl;
 
 	lowVert_light->SetLineColor(kRed);
 	highVert_light->SetLineColor(kBlue);
 	lowVert_heavy->SetLineColor(kRed);
 	highVert_heavy->SetLineColor(kBlue);
 
-cout<<__LINE__<<endl;
+//cout<<__LINE__<<endl;
 
 //===============================
 //Draw Plots
@@ -60,7 +60,7 @@ cout<<__LINE__<<endl;
 	TCanvas *c1 = new TCanvas("MET_Light_canvas", "", 2000, 2000);
 	c1->cd();
 
-cout<<__LINE__<<endl;
+//cout<<__LINE__<<endl;
 
 	gPad->SetLogy(1);
 	gStyle->SetOptStat(kFALSE);
@@ -69,7 +69,7 @@ cout<<__LINE__<<endl;
 	lowVert_light->Draw("HIST");
 	highVert_light->Draw("HIST SAME");
 
-cout<<__LINE__<<endl;
+//cout<<__LINE__<<endl;
 	
 	TLegend *l1;
 	l1 = new TLegend(0.73, 0.73, 0.88, 0.88);
@@ -82,14 +82,14 @@ cout<<__LINE__<<endl;
 	  
 	l1->Draw("same");
 
-cout<<__LINE__<<endl;
+//cout<<__LINE__<<endl;
 
 	c1->SaveAs("plots/"+sample+"_MET_light.png");
 
 	TCanvas *c2 = new TCanvas("MET_Heavy_canvas", "", 2000, 2000);
 	c2->cd();
 
-cout<<__LINE__<<endl;
+//cout<<__LINE__<<endl;
 
 	gPad->SetLogy(1);
 	gStyle->SetOptStat(kFALSE);
@@ -98,7 +98,7 @@ cout<<__LINE__<<endl;
 	lowVert_heavy->Draw("HIST");
 	highVert_heavy->Draw("HIST SAME");
 
-cout<<__LINE__<<endl;
+//cout<<__LINE__<<endl;
 	
 	TLegend *l2;
 	l2 = new TLegend(0.73, 0.73, 0.88, 0.88);
@@ -111,7 +111,7 @@ cout<<__LINE__<<endl;
 	  
 	l2->Draw("same");
 
-cout<<__LINE__<<endl;
+//cout<<__LINE__<<endl;
 
 	c2->SaveAs("plots/"+sample+"_MET_heavy.png");
 

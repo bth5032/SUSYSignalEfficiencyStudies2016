@@ -116,8 +116,8 @@ void DrawPlots(TString sample){
 	c2->SaveAs("plots/"+sample+"_MET_heavy.png");
 
 
-cout<<"SR "+sample+": SUSY Light low vertex count 300+ MET count "<<lowVert_light->GetBinContent(lowVert_light->FindBin(300))<<endl;
-cout<<"SR "+sample+": SUSY Light high vertex count 300+ MET count "<<highVert_light->GetBinContent(highVert_light->FindBin(300))<<endl;
-cout<<"SR "+sample+": SUSY Heavy low vertex count 300+ MET count "<<lowVert_heavy->GetBinContent(lowVert_heavy->FindBin(300))<<endl;
-cout<<"SR "+sample+": SUSY Heavy high vertex count 300+ MET count "<<highVert_heavy->GetBinContent(highVert_heavy->FindBin(300))<<endl;
+cout<<"SR "+sample+": SUSY Light low vertex count 300+ MET count "<<lowVert_light->GetBinContent(lowVert_light->FindBin(300))<<"+/-"<<lowVert_light->GetBinError(lowVert_light->FindBin(300))<<endl;
+cout<<"SR "+sample+": SUSY Light high vertex count 300+ MET count "<<highVert_light->GetBinContent(highVert_light->FindBin(300))<<"+/-"<<highVert_light->GetBinError(highVert_light->FindBin(300))<<endl;
+cout<<"SR "+sample+": SUSY Heavy low vertex count 300+ MET count "<<lowVert_heavy->GetBinContent(lowVert_heavy->FindBin(300))<<"+/-"<<lowVert_heavy->GetBinError(lowVert_heavy->FindBin(300))<<endl;
+cout<<"SR "+sample+": SUSY Heavy high vertex count 300+ MET count "<<highVert_heavy->GetBinContent(highVert_heavy->FindBin(300))<<"+/-"<<highVert_heavy->GetBinError(highVert_heavy->FindBin(300))<<endl;
 }

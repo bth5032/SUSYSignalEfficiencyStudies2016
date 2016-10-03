@@ -1,7 +1,7 @@
 #include "TString.h"
 #include <vector>
 
-void DrawPlots(TString sample){
+void ProcessSample(TString sample){
 	TString dir_loc = "/nfs-7/userdata/bobak/SUSYSignalEfficiency2016/";
 
 	vector<TFile*> files;
@@ -143,4 +143,30 @@ cout<<"SR "+sample+": SUSY Light low vertex count 300+ MET count "<<lowVert_ligh
 cout<<"SR "+sample+": SUSY Light high vertex count 300+ MET count "<<highVert_light_count<<"+/-"<<highVert_light_error<<" Efficiency: "<<highVert_light_eff<<"+/-"<<highVert_light_eff_err<<endl;
 cout<<"SR "+sample+": SUSY Heavy low vertex count 300+ MET count "<<lowVert_heavy_count<<"+/-"<<lowVert_heavy_error<<" Efficiency: "<<lowVert_heavy_eff<<"+/-"<<lowVert_heavy_eff_err<<endl;
 cout<<"SR "+sample+": SUSY Heavy high vertex count 300+ MET count "<<highVert_heavy_count<<"+/-"<<highVert_heavy_error<<" Efficiency: "<<highVert_heavy_eff<<"+/-"<<highVert_heavy_eff_err<<endl;
+}
+
+void DrawPlots(TString sample=""){
+	if (sample != ""){
+		ProcessSample(sample);
+	}
+	else{
+		cout<<"================================================"<<endl;
+		cout<<"Edge"<<endl;
+		ProcessSample("edge");
+		cout<<"////////////////////////////////////"<<endl;
+		cout<<"/A/Btag/"<<endl;
+		ProcessSample("A_Btag");
+		cout<<"/A/Bveto/"<<endl;
+		ProcessSample("A_Bveto");	
+		cout<<"////////////////////////////////////"<<endl;
+		cout<<"/B/Btag/"<<endl;
+		ProcessSample("B_Btag");
+		cout<<"/B/Bveto/"<<endl;
+		ProcessSample("B_Bveto");
+		cout<<"////////////////////////////////////"<<endl;
+		cout<<"ATLAS"<<endl;
+		ProcessSample("ATLAS");
+		cout<<"================================================"<<endl;
+	}
+	
 }

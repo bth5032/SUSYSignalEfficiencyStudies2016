@@ -123,18 +123,18 @@ double lowVert_light_error = lowVert_light->GetBinError(lowVert_light->FindBin(3
 double lowVert_light_eff = lowVert_light_count/low_mass_base;
 double lowVert_light_eff_err = sqrt(lowVert_light_eff*(1-lowVert_light_eff)/low_mass_base);
 
-double highVert_light_count = lowVert_light->GetBinContent(lowVert_light->FindBin(300));
-double highVert_light_error = lowVert_light->GetBinError(lowVert_light->FindBin(300));
+double highVert_light_count = highVert_light->GetBinContent(highVert_light->FindBin(300));
+double highVert_light_error = highVert_light->GetBinError(highVert_light->FindBin(300));
 double highVert_light_eff = highVert_light_count/low_mass_base;
 double highVert_light_eff_err = sqrt(highVert_light_eff*(1-highVert_light_eff)/low_mass_base);
 
-double lowVert_heavy_count = lowVert_light->GetBinContent(lowVert_light->FindBin(300));
-double lowVert_heavy_error = lowVert_light->GetBinError(lowVert_light->FindBin(300));
+double lowVert_heavy_count = lowVert_heavy->GetBinContent(lowVert_heavy->FindBin(300));
+double lowVert_heavy_error = lowVert_heavy->GetBinError(lowVert_heavy->FindBin(300));
 double lowVert_heavy_eff = lowVert_heavy_count/high_mass_base;
 double lowVert_heavy_eff_err = sqrt(lowVert_heavy_eff*(1-lowVert_heavy_eff)/high_mass_base);
 
-double highVert_heavy_count = lowVert_light->GetBinContent(lowVert_light->FindBin(300));
-double highVert_heavy_error = lowVert_light->GetBinError(lowVert_light->FindBin(300));
+double highVert_heavy_count = highVert_heavy->GetBinContent(highVert_heavy->FindBin(300));
+double highVert_heavy_error = highVert_heavy->GetBinError(highVert_heavy->FindBin(300));
 double highVert_heavy_eff = highVert_heavy_count/high_mass_base;
 double highVert_heavy_eff_err = sqrt(highVert_heavy_eff*(1-highVert_heavy_eff)/high_mass_base);
 

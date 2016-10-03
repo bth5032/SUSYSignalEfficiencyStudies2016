@@ -141,6 +141,6 @@ double highVert_heavy_eff_err = sqrt(highVert_heavy_eff*(1-highVert_heavy_eff)/h
 
 cout<<"SR "+sample+": SUSY Light low vertex count 300+ MET count "<<lowVert_light_count<<"+/-"<<lowVert_light_error<<" Efficiency: "<<lowVert_light_eff<<"+/-"<<lowVert_light_eff_err<<endl;
 cout<<"SR "+sample+": SUSY Light high vertex count 300+ MET count "<<highVert_light_count<<"+/-"<<highVert_light_error<<" Efficiency: "<<highVert_light_eff<<"+/-"<<highVert_light_eff_err<<endl;
-cout<<"SR "+sample+": SUSY Heavy low vertex count 300+ MET count "<<lowVert_heavy_count<<"+/-"<<lowVert_heavy_error<<" Efficiency: "<<lowVert_heavy_eff<<"+/-"<<llowVert_heavy_eff_err<<endl;
+cout<<"SR "+sample+": SUSY Heavy low vertex count 300+ MET count "<<lowVert_heavy_count<<"+/-"<<lowVert_heavy_error<<" Efficiency: "<<lowVert_heavy_eff<<"+/-"<<lowVert_heavy_eff_err<<endl;
 cout<<"SR "+sample+": SUSY Heavy high vertex count 300+ MET count "<<highVert_heavy_count<<"+/-"<<highVert_heavy_error<<" Efficiency: "<<highVert_heavy_eff<<"+/-"<<highVert_heavy_eff_err<<endl;
 }

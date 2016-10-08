@@ -25,9 +25,9 @@ double lmlv_err, lmhv_err, hmhv_err, hmlv_err;
 double lmlv_count, lmhv_count, hmhv_count, hmlv_count;
 
 lmlv_count = lmlv->IntegralAndError(-1,101, lmlv_err);
-hmlv_count = hmlv->Integral(-1,101, hmlv_err);
+hmlv_count = hmlv->IntegralAndError(-1,101, hmlv_err);
 lmhv_count = lmhv->IntegralAndError(-1,101, lmhv_err);
-hmhv_count = hmhv->Integral(-1,101, hmhv_err);
+hmhv_count = hmhv->IntegralAndError(-1,101, hmhv_err);
 
 vector<pair<double, double>> ret;
 

@@ -1,5 +1,10 @@
 #include "TString.h"
 #include <vector>
+#include "getBaselineNums.C"
+
+double err_binomial(double A, double B, double errA, double errB) {
+ return (1/pow(A+B,2)) * sqrt(pow(B*errA,2) + pow(A*errB,2));
+}
 
 void ProcessSample(TString sample){
 	TString dir_loc = "/nfs-7/userdata/bobak/SUSYSignalEfficiency2016/";
@@ -115,28 +120,41 @@ void ProcessSample(TString sample){
 
 	c2->SaveAs("plots/"+sample+"_MET_heavy.png");
 
-double high_mass_base = 2.47253;
-double low_mass_base = 4.41095;
+vector<pair<double, double>> baseline_stats = getBaselineNums();
+
+
+double hmlv_count = baseline_stats[0].first;
+double hmlv_err = baseline_stats[0].second;
+
+double hmhv_count = baseline_stats[1].first;
+double hmhv_err = baseline_stats[1].second;
+
+double lmlv_count = baseline_stats[2].first;
+double lmlv_err = baseline_stats[2].second;
+
+double lmhv_count = baseline_stats[3].first;
+double lmhv_err = baseline_stats[3].second;
+
 
 double lowVert_light_count = lowVert_light->GetBinContent(lowVert_light->FindBin(300));
 double lowVert_light_error = lowVert_light->GetBinError(lowVert_light->FindBin(300));
-double lowVert_light_eff = lowVert_light_count/low_mass_base;
-double lowVert_light_eff_err = sqrt(lowVert_light_eff*(1-lowVert_light_eff)/low_mass_base);
+double lowVert_light_eff = lowVert_light_count/lmlv_count;
+double lowVert_light_eff_err = err_binomial(lowVert_light_count, lmlv_count, lowVert_light_error, lmlv_err);
 
 double highVert_light_count = highVert_light->GetBinContent(highVert_light->FindBin(300));
 double highVert_light_error = highVert_light->GetBinError(highVert_light->FindBin(300));
-double highVert_light_eff = highVert_light_count/low_mass_base;
-double highVert_light_eff_err = sqrt(highVert_light_eff*(1-highVert_light_eff)/low_mass_base);
+double highVert_light_eff = highVert_light_count/lmhv_count;
+double highVert_light_eff_err = err_binomial(highVert_light_count, lmhv_count, highVert_light_eff_err, lmhv_err);
 
 double lowVert_heavy_count = lowVert_heavy->GetBinContent(lowVert_heavy->FindBin(300));
 double lowVert_heavy_error = lowVert_heavy->GetBinError(lowVert_heavy->FindBin(300));
-double lowVert_heavy_eff = lowVert_heavy_count/high_mass_base;
-double lowVert_heavy_eff_err = sqrt(lowVert_heavy_eff*(1-lowVert_heavy_eff)/high_mass_base);
+double lowVert_heavy_eff = lowVert_heavy_count/hmlv_count;
+double lowVert_heavy_eff_err = err_binomial(lowVert_heavy_count, hmlv_count, lowVert_heavy_eff_err, hmlv_err);
 
 double highVert_heavy_count = highVert_heavy->GetBinContent(highVert_heavy->FindBin(300));
 double highVert_heavy_error = highVert_heavy->GetBinError(highVert_heavy->FindBin(300));
-double highVert_heavy_eff = highVert_heavy_count/high_mass_base;
-double highVert_heavy_eff_err = sqrt(highVert_heavy_eff*(1-highVert_heavy_eff)/high_mass_base);
+double highVert_heavy_eff = highVert_heavy_count/hmhv_count;
+double highVert_heavy_eff_err = err_binomial(highVert_heavy_count, hmhv_count, highVert_heavy_eff_err, hmhv_err);
 
 
 cout<<"SR "+sample+": SUSY Light low vertex count 300+ MET count "<<lowVert_light_count<<"+/-"<<lowVert_light_error<<" Efficiency: "<<lowVert_light_eff<<"+/-"<<lowVert_light_eff_err<<endl;

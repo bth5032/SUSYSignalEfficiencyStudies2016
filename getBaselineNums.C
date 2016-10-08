@@ -8,7 +8,7 @@ vector<pair<double,double>> getBaselineNums(){
 
 TH1D * lmhv = new TH1D("lmhv", "low mass, high vertex", 100, 0, 100);
 TH1D * hmhv = new TH1D("hmhv", "high mass, high vertex", 100, 0, 100);
-TH1D * hlhv = new TH1D("hmlv", "high mass, low vertex", 100, 0, 100);
+TH1D * hmlv = new TH1D("hmlv", "high mass, low vertex", 100, 0, 100);
 TH1D * lmlv = new TH1D("lmlv", "low mass, low vertex", 100, 0, 100);
 
 
@@ -34,7 +34,7 @@ vector<pair<double, double>> ret;
 ret.push_back(make_pair(hmlv_count, hmlv_err));
 ret.push_back(make_pair(hmhv_count, hmhv_err));
 ret.push_back(make_pair(lmlv_count, lmlv_err));
-ret.push_back(make_pair(lmlh_count, lmhv_err));
+ret.push_back(make_pair(lmhv_count, lmhv_err));
 
 cout<<"high mass, low vertex"<<ret[0].first<<"+/-"<<ret[0].second<<endl;
 cout<<"high mass, high vertex"<<ret[1].first<<"+/-"<<ret[1].second<<endl;

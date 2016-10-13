@@ -3,7 +3,9 @@
 #include "getBaselineNums.C"
 
 double err_binomial(double A, double B, double errA, double errB) {
- return (1/pow(A+B,2)) * sqrt(pow(B*errA,2) + pow(A*errB,2));
+	double c = B-A;
+	double d = sqrt(errB*errB - errA*errA);
+	return (1/pow(A+c,2)) * sqrt(pow(c*errA,2) + pow(A*d,2));
 }
 
 void ProcessSample(TString sample){
